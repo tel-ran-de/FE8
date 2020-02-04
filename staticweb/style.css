@@ -1,0 +1,11 @@
+a {
+    color: white;
+    font-size: 25px;
+    background-color: black;
+}
+
+.telran a {
+    color: blue;
+    font-size: 15px;
+    background-color: red;
+}
