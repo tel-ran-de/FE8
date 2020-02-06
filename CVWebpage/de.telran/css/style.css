@@ -1,0 +1,82 @@
+.card-header{
+    background-color: #ffffff !important;
+    border-bottom: 9px solid #0a6e9a !important;
+}
+
+.card-header h3{
+    display: inline-block;
+    padding: 5px 5px 5px 15px;
+    background: #0a6e9a;
+    color: #ffffff;
+    position: relative;
+    left: -60px;
+    margin-top: 35px;
+    padding-left: 55px;
+}
+
+.card-header h1{
+    line-height: 65px;
+}
+
+.photo{
+    margin-left: -100px;
+    margin-top: 25px;
+}
+
+.address{
+    padding-top: 50px;
+    margin: 0;
+}
+.address, .contact{
+
+}
+.profile hr{
+    background: #6c757d;
+    opacity: 0.2;
+}
+.profile .text-body{
+    font-style: italic;
+}
+
+.birthday span:nth-child(1){
+    font-weight: bold;
+}
+.ethnic span:nth-child(1){
+    font-weight: bold;
+}
+
+.birthday span:nth-child(2), .ethnic span:nth-child(2){
+    text-decoration: underline;
+}
+.interests{
+    padding-top: 20px;
+}
+
+.profile h4, .interests h4, .experience h4{
+    font-weight: bold;
+}
+.profile dt{
+    border-right: 1px solid #ff0000;
+}
+.profile dd{
+    padding-bottom: 50px;
+}
+.profile dd:last-child{
+    padding-bottom:0;
+}
+
+
+.experience dt{
+    border-right: 1px solid #496dff;
+}
+.experience dd{
+    padding-bottom: 50px;
+}
+.experience dd:last-child{
+    padding-bottom:0;
+}
+
+
+.bd-placeholder-img{
+    background-image: url("../img/photo.jpg");
+}
