@@ -12,6 +12,9 @@ import org.springframework.web.bind.annotation.RestController;
 @Slf4j
 
 
+
+
+
 public class SimpleController {
 
     @GetMapping("/form")
@@ -31,5 +34,8 @@ public class SimpleController {
         log.info("User={}", user);
         return "OK from post with object mapping";
     }
+
+
+
 
 }
