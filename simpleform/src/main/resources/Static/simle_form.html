@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>New user</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/jquery-3.4.1.js"></script>
+    <script src="js/script.js"></script>
+</head>
+<body class="container">
+<form action="/api/form-with-object" method="post">
+        <div class="form-group">
+            <label>First name</label>
+            <input name="firstName" type="text" class="form-control">
+        </div>
+        <div class="form-group">
+            <label>Last name</label>
+            <input name="lastName" type="text" class="form-control">
+        </div>
+        <div class="form-group">
+            <label>Email</label>
+            <input name="email" type="email" class="form-control">
+        </div>
+        <button type="submit" class="btn btn-primary" id="submit_button">Submit</button>
+    </form>
+</body>
+</html>
