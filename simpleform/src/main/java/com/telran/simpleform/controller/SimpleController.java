@@ -11,24 +11,25 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api")
 @Slf4j
 
-public class SimpleController {
 
+public class SimpleController {
 
     @GetMapping("/form")
     public String simpleForm(String firstName, String lastName, String email) {
-        log.info("firstName={} lastName={} email={}", firstName,lastName,email);
+        log.info("firstName={} lastName={} email={}", firstName, lastName, email);
         return "OK";
-
     }
+
     @PostMapping("/form")
     public String simpleFormViaPost(String firstName, String lastName, String email) {
-        log.info("firstName={} lastName={} email={}", firstName,lastName,email);
+        log.info("firstName={} lastName={} email={}", firstName, lastName, email);
         return "OK from post";
     }
+
     @PostMapping("/form-with-object")
     public String simpleFormViaPost(UserDto user) {
         log.info("User={}", user);
-        return "OK from post with object ";
+        return "OK from post with object mapping";
     }
 
 }
