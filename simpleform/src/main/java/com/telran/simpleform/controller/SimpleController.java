@@ -1,6 +1,6 @@
 package com.telran.simpleform.controller;
 
-import com.telran.simpleform.controller.dto.User;
+import com.telran.simpleform.controller.dto.UserDto;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -26,9 +26,9 @@ public class SimpleController {
         return "OK from post";
     }
     @PostMapping("/form-with-object")
-    public String simpleFormViaPost(User user) {
+    public String simpleFormViaPost(UserDto user) {
         log.info("User={}", user);
-        return "OK from post with object";
+        return "OK from post with object ";
     }
 
 }
