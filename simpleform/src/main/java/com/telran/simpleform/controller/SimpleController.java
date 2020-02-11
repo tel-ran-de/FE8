@@ -1,6 +1,7 @@
 package com.telran.simpleform.controller;
 
 import com.telran.simpleform.controller.dto.UserDto;
+import com.telran.simpleform.controller.dto.YourPetDto;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -10,8 +11,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/api")
 @Slf4j
-
-
 
 
 
@@ -34,7 +33,6 @@ public class SimpleController {
         log.info("User={}", user);
         return "OK from post with object mapping";
     }
-
 
 
 
