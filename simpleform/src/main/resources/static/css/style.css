@@ -1,0 +1,7 @@
+form {
+    margin-bottom: 20px;
+}
+
+div[role=alert] {
+    display: none;
+}
