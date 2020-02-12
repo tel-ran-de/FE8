@@ -2,16 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>New userDto</title>
-
-    <link rel="stylesheet" href="css/bootstrap.css">
-
+    <title>New user</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
     <script src="js/jquery-3.4.1.js"></script>
     <script src="js/script.js"></script>
-
 </head>
 <body class="container">
-    <form action="/api/form-with-object" method="post">
+    <form action="/api/user" method="post" id="form1">
         <div class="form-group">
             <label>First name</label>
             <input name="firstName" type="text" class="form-control">
@@ -24,8 +22,25 @@
             <label>Email</label>
             <input name="email" type="email" class="form-control">
         </div>
-        <button type="submit" class="btn btn-primary" id="submit_button">Submit</button>
+        <button type="submit" class="btn btn-primary">Submit</button>
     </form>
+    <div class="alert alert-info" role="alert"></div>
 
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">First name</th>
+            <th scope="col">Last name</th>
+            <th scope="col">E-mail</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+        </tr>
+        </tbody>
+    </table>
 </body>
 </html>
