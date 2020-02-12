@@ -1,32 +1,36 @@
 package com.telran.simpleform.controller;
 
 import com.telran.simpleform.controller.dto.UserDto;
+import com.telran.simpleform.repository.UserRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/api")
 @Slf4j
 public class SimpleController {
 
-    @GetMapping("/form")
-    public String simpleForm(String firstName, String lastName, String email) {
-        log.info("firstName={} lastName={} email={}", firstName, lastName, email);
-        return "OK";
+    private final UserRepository userRepository;
+
+    public SimpleController(UserRepository userRepository) {
+        this.userRepository = userRepository;
     }
 
-    @PostMapping("/form")
-    public String simpleFormViaPost(String firstName, String lastName, String email) {
-        log.info("firstName={} lastName={} email={}", firstName, lastName, email);
-        return "OK from post";
+    @GetMapping("/user")
+    public List<UserDto> getUsers() {
+        log.info("get all users request received");
+        return userRepository.getUsers();
     }
 
-    @PostMapping("/form-with-object")
+    @PostMapping("/user")
     public String simpleFormViaPost(UserDto user) {
         log.info("User={}", user);
-        return "OK from post with object mapping";
+        userRepository.save(user);
+        return "User " + user.toString() + " created";
     }
 }
