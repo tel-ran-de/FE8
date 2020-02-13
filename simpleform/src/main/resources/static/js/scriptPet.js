@@ -1,16 +1,17 @@
 $(document).ready(function(){
    $.ajax({
-      url: "/api/user",
+      url: "/api1/pet",
       method: "get",
       success: function(data) {
-         let userTable = '';
-         data.forEach(user => {
-            userTable +='<tr><td>'+ user.firstName +'</td>' +
-                '<td>' + user.lastName +'</td>' +
-                '<td>' + user.email +'</td></tr>';
+         let petTable = '';
+         data.forEach(pet => {
+            petTable +='<tr><td>'+ pet.petName +'</td>' +
+                '<td>' + pet.age +'</td>' +
+                '<td>' + pet.dateOfBirth + '</td>' +'<td>'+pet.kind +'<td>'+
+                pet.numberOfLegs+'</td></tr>';
 
          });
-         $('table tbody').html(userTable);
+         $('table tbody').html(petTable);
       }
    });
 
@@ -35,19 +36,21 @@ $(document).ready(function(){
       });
 
       $.ajax({
-         url: "/api/user",
+         url: "/api1/pet",
          method: "get",
          success: function(data) {
-            let userTable = '';
-            data.forEach(user => {
-               userTable +='<tr><td>'+ user.firstName +'</td>' +
-                   '<td>' + user.lastName +'</td>' +
-                   '<td>' + user.email +'</td></tr>';
+            let petTable = '';
+            data.forEach(pet => {
+               petTable +='<tr><td>'+ pet.petName +'</td>' +
+                   '<td>' + pet.age +'</td>' +
+                   '<td>' + pet.dateOfBirth + '</td>' +'<td>'+pet.kind +'<td>'+
+                   pet.numberOfLegs+'</td></tr>';
 
             });
-            $('table tbody').html(userTable);
+            $('table tbody').html(petTable);
          }
       });
+
 
 
    });
