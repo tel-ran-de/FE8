@@ -16,20 +16,20 @@ import java.util.Date;
 public class PetSimpleController {
     @GetMapping("/form")
     public String simpleFormPet(String petName, int petAge, Date birthDay, String petKind) {
-//        log.info("petName={} petAge={} birthDay={} petKind={}" , petName, petAge, birthDay, petKind);
+        log.info("petName={} petAge={} birthDay={} petKind={}" , petName, petAge, birthDay, petKind);
         return "OK";
     }
 
 
     @PostMapping("/form")
     public String simpleFormPetPost(String petName, int petAge, Date birthDay, String petKind) {
-//        log.info("petName={} petAge={} birthDay={} petKind={}" , petName, petAge, birthDay, petKind);
+        log.info("petName={} petAge={} birthDay={} petKind={}" , petName, petAge, birthDay, petKind);
         return "OK from post";
     }
 
     @PostMapping("/form-with-object-Pet")
     public String simpleFormViaPostPet(PetDto pet) {
-//        log.info("Pet={}", pet);
+        log.info("Pet={}", pet);
         return "OK from post with object mapping";
     }
 }
