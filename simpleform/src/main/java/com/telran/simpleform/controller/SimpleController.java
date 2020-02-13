@@ -9,6 +9,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+/**
+ * Created for simpleform.
+ * UserDto: andron13
+ * Date: 08.02.2020
+ * Time: 10:35
+ */
 
 @RestController
 @RequestMapping("/api")
