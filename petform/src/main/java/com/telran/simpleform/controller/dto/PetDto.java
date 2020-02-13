@@ -10,7 +10,7 @@ import java.time.LocalDate;
 @Data
 public class PetDto {
     private String petName;
-    private int petAge;
+    private String petAge;
     private LocalDate birthDay;
     private String petKind;
 }

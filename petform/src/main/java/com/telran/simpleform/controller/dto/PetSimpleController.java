@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 @RestController
@@ -15,14 +16,14 @@ import java.util.Date;
 
 public class PetSimpleController {
     @GetMapping("/form")
-    public String simpleFormPet(String petName, int petAge, Date birthDay, String petKind) {
+    public String simpleFormPet(String petName, String petAge, LocalDate birthDay, String petKind) {
         log.info("petName={} petAge={} birthDay={} petKind={}" , petName, petAge, birthDay, petKind);
         return "OK";
     }
 
 
     @PostMapping("/form")
-    public String simpleFormPetPost(String petName, int petAge, Date birthDay, String petKind) {
+    public String simpleFormPetPost(String petName, String petAge, LocalDate birthDay, String petKind) {
         log.info("petName={} petAge={} birthDay={} petKind={}" , petName, petAge, birthDay, petKind);
         return "OK from post";
     }
