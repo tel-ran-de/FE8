@@ -50,5 +50,22 @@ $(document).ready(function(){
             form[0].reset();
          }
       });
+
+      $.ajax({
+         url: "/api/user",
+         method: "get",
+         success: function(data) {
+            let userTable = '';
+            data.forEach(user => {
+               userTable +='<tr><td>'+ user.firstName +'</td>' +
+                   '<td>' + user.lastName +'</td>' +
+                   '<td>' + user.email +'</td></tr>';
+
+            });
+            $('table tbody').html(userTable);
+         }
+      });
+
+
    });
 });
