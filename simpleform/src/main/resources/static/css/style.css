@@ -5,3 +5,9 @@ form {
 div[role=alert] {
     display: none;
 }
+
+.table {
+    width: 600px;
+    margin-top: 30px;
+    text-align: left;
+}
