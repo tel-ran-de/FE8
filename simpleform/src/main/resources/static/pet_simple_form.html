@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>New Pet</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/jquery-3.4.1.js"></script>
+    <script src="js/scriptPet.js"></script>
+</head>
+<body class="container">
+<form action="/api1/pet" method="post" id="form1">
+    <input name="id" type="hidden" class="form-control">
+    <div class="form-group">
+        <label>Pet name</label>
+        <input name="petName" type="text" class="form-control">
+    </div>
+    <div class="form-group">
+        <label>Age</label>
+        <input name="age" type="text" class="form-control">
+    </div>
+    <div class="form-group">
+        <label>Date of Birth</label>
+        <input name="dateOfBirth" type="text" class="form-control">
+    </div>
+    <div class="form-group">
+        <label>Kind</label>
+        <input name="kind" type="text" class="form-control">
+    </div>
+    <div class="form-group">
+        <label>Number of Legs</label>
+        <input name="numberOfLegs" type="text" class="form-control">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="reset" class="btn btn-primary">Reset</button>
+</form>
+<div class="alert alert-info" role="alert"></div>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Pet name</th>
+        <th scope="col">Age</th>
+        <th scope="col">Date of birth</th>
+        <th scope="col">Kind</th>
+        <th scope="col">Number of legs</th>
+
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

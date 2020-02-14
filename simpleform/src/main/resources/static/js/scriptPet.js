@@ -1,24 +1,28 @@
-function updateUsersTable() {
+function updatePetsTable() {
    $.ajax({
-      url: "/api/user",
+      url: "/api1/pet",
       method: "get",
       success: function(data) {
          $('table tbody').html('');
-         data.forEach((user, id) => {
+         data.forEach((pet, id) => {
             const row ='<tr><td>' + id + '</td>' +
-                '<td>'+ user.firstName +'</td>' +
-                '<td>' + user.lastName +'</td>' +
-                '<td>' + user.email +'</td></tr>';
+                '<td>'+ pet.petName +'</td>' +
+                '<td>' + pet.age +'</td>' +
+                '<td>' + pet.dateOfBirth +'</td>' +
+                '<td>' + pet.kind +'</td>' +
+                '<td>' + pet.numberOfLegs +'</td></tr>';
             $('table tbody').append(row);
             $('table > tbody > tr:last-child').click(function(event) {
                $.ajax({
-                  url: "/api/user/" + id,
+                  url: "/api1/pet/" + id,
                   method: "get",
-                  success: function(user) {
+                  success: function(pet) {
                      $('form input[name=id]').val(id);
-                     $('form input[name=firstName]').val(user.firstName);
-                     $('form input[name=lastName]').val(user.lastName);
-                     $('form input[name=email]').val(user.email);
+                     $('form input[name=petName]').val(pet.petName);
+                     $('form input[name=age]').val(pet.age);
+                     $('form input[name=dateOfBirth]').val(pet.dateOfBirth);
+                     $('form input[name=kind]').val(pet.kind);
+                     $('form input[name=numberOfLegs]').val(pet.numberOfLegs);
                   }
                });
             })
@@ -27,8 +31,9 @@ function updateUsersTable() {
    });
 }
 
+
 $(document).ready(function(){
-   updateUsersTable();
+   updatePetsTable();
 
    $('form').submit(function(event) {
       event.preventDefault();
@@ -41,7 +46,7 @@ $(document).ready(function(){
          success: function(data) {
             const alert = $('form + div.alert');
             alert.text(data);
-            updateUsersTable();
+            updatePetsTable();
             alert.fadeIn(500, function(){
                setTimeout(function(){
                   alert.fadeOut();
@@ -50,6 +55,8 @@ $(document).ready(function(){
             form[0].reset();
          }
       });
+
+
 
    });
 });
