@@ -1,5 +1,6 @@
 package com.telran.simpleform.controller.dto;
 
+import javax.validation.constraints.NotEmpty;
 import lombok.Data;
 
 /**
@@ -11,6 +12,8 @@ import lombok.Data;
 
 @Data
 public class UserDto {
+    private Integer id;
+    @NotEmpty
     private String firstName;
     private String lastName;
     private String email;
