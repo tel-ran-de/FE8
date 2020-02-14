@@ -1,4 +1,5 @@
 function updateUsersTable() {
+
    $.ajax({
       url: "/api/user",
       method: "get",
