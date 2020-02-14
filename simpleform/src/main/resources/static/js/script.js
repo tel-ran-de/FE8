@@ -5,11 +5,24 @@ function updateUsersTable() {
       success: function(data) {
          $('table tbody').html('');
          data.forEach((user, id) => {
-            const row ='<tr><td>' + id + '</td>' +
-                '<td>'+ user.firstName +'</td>' +
-                '<td>' + user.lastName +'</td>' +
-                '<td>' + user.email +'</td></tr>';
+            const row = document.createElement("TR");
+
+            let tdID = document.createElement("TD");
+            let tdFirstName = document.createElement("TD");
+            let tdLastName = document.createElement("TD");
+            let tdEmail = document.createElement("TD");
             $('table tbody').append(row);
+
+            row.append(tdID);
+            row.append(tdFirstName);
+            row.append(tdLastName);
+            row.append(tdEmail);
+
+            tdID.innerHTML = id;
+            tdFirstName.innerHTML = user.firstName;
+            tdLastName.innerHTML = user.lastName;
+            tdEmail.innerHTML = user.email;
+
             $('table > tbody > tr:last-child').click(function(event) {
                $.ajax({
                   url: "/api/user/" + id,
