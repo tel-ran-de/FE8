@@ -10,6 +10,7 @@
 </head>
 <body class="container">
 <form action="/api1/pet" method="post" id="form1">
+    <input name="id" type="hidden" class="form-control">
     <div class="form-group">
         <label>Pet name</label>
         <input name="petName" type="text" class="form-control">
@@ -31,12 +32,14 @@
         <input name="numberOfLegs" type="text" class="form-control">
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="reset" class="btn btn-primary">Reset</button>
 </form>
 <div class="alert alert-info" role="alert"></div>
 
 <table class="table">
     <thead>
     <tr>
+        <th scope="col">ID</th>
         <th scope="col">Pet name</th>
         <th scope="col">Age</th>
         <th scope="col">Date of birth</th>
