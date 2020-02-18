@@ -6,9 +6,12 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
     <script src="js/jquery-3.4.1.js"></script>
+    <script src="js/crud_functions.js"></script>
     <script src="js/script.js"></script>
 </head>
 <body class="container">
+    <form>
+    </form>
     <form action="/api/user" method="post" id="form1">
         <input name="id" type="hidden" class="form-control">
         <div class="form-group">
@@ -32,7 +35,18 @@
     </form>
     <div class="alert alert-info" role="alert"></div>
 
-    <table class="table">
+    <table>
+        <thead>
+        <tr>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+
+    <table class="table" id="table1">
         <thead>
         <tr>
             <th scope="col">ID</th>
