@@ -1,6 +1,7 @@
 package com.telran.simpleform.controller.dto;
 
 import java.util.Date;
+import javax.validation.constraints.NotEmpty;
 
 /**
  * Created for simpleform.
@@ -9,8 +10,10 @@ import java.util.Date;
  * Time: 19:17
  */
 public class PetDto {
+
 	private String petName;
 	private String petAge;
-	private Date birthDay;
-	private int petKind;
+	private String birthDay;
+	private String petKind;
+	private String limbCount;
 }
