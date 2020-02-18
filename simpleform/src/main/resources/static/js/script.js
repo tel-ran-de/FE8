@@ -1,31 +1,39 @@
-function updateUsersTable() {
+let addRowToUserTable = function (user) {
+   let row = '<tr>';
+   Object.keys(user).forEach(field => {
+      row += '<td>'+ user[field] +'</td>'
+   });
+   row += "/tr";
+   $('table tbody').append(row);
+};
+
+let createClickEventHandlerForUserRow = function (id) {
+   return function(event) {
+      $.ajax({
+         url: "/api/user/" + id,
+         method: "get",
+         success: function(user) {
+            Object.keys(user).forEach(field => {
+               $('form [name='+ field +']').val(user[field]);
+            });
+         }
+      });
+   }
+};
+
+let updateUsersTable = function () {
    $.ajax({
       url: "/api/user",
       method: "get",
       success: function(data) {
          $('table tbody').html('');
          data.forEach((user, id) => {
-            const row ='<tr><td>' + id + '</td>' +
-                '<td>'+ user.firstName +'</td>' +
-                '<td>' + user.lastName +'</td>' +
-                '<td>' + user.email +'</td></tr>';
-            $('table tbody').append(row);
-            $('table > tbody > tr:last-child').click(function(event) {
-               $.ajax({
-                  url: "/api/user/" + id,
-                  method: "get",
-                  success: function(user) {
-                     $('form input[name=id]').val(id);
-                     $('form input[name=firstName]').val(user.firstName);
-                     $('form input[name=lastName]').val(user.lastName);
-                     $('form input[name=email]').val(user.email);
-                  }
-               });
-            })
+            addRowToUserTable(user);
+            $('table > tbody > tr:last-child').click(createClickEventHandlerForUserRow(id));
          });
       }
    });
-}
+};
 
 $(document).ready(function(){
    updateUsersTable();

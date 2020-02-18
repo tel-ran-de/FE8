@@ -13,6 +13,7 @@ public class UserRepository {
 
     public void save(UserDto userDto) {
         if (userDto.getId() == null) {
+            userDto.setId(users.size());
             users.add(userDto);
         } else {
             users.set(userDto.getId(), userDto);
