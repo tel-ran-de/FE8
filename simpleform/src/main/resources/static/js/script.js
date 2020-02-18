@@ -1,55 +1,64 @@
-let addRowToUserTable = function (user) {
+let addRowToDataTable = function (item) {
    let row = '<tr>';
-   Object.keys(user).forEach(field => {
-      row += '<td>'+ user[field] +'</td>'
+   Object.keys(item).forEach(field => {
+      row += '<td>'+ item[field] +'</td>'
    });
    row += "/tr";
    $('table tbody').append(row);
 };
 
-let createClickEventHandlerForUserRow = function (id) {
+/*let deleteRowFromDataTable = function (item) {
+   let row = '<tr>';
+   Object.keys(item).forEach(field => {
+      row += '<td>'+ item[field] +'</td>'
+   });
+   row += "/tr";
+   $('table tbody').delete(row);
+};*/
+
+let createClickEventHandlerForDataRow = function (id, url) {
    return function(event) {
       $.ajax({
-         url: "/api/user/" + id,
+         url: url + '/' + id,
          method: "get",
-         success: function(user) {
-            Object.keys(user).forEach(field => {
-               $('form [name='+ field +']').val(user[field]);
+         success: function(item) {
+            Object.keys(item).forEach(field => {
+               $('form [name='+ field +']').val(item[field]);
             });
          }
       });
    }
 };
 
-let updateUsersTable = function () {
+let updateDataTable = function (url) {
    $.ajax({
-      url: "/api/user",
+      url: url,
       method: "get",
       success: function(data) {
          $('table tbody').html('');
-         data.forEach((user, id) => {
-            addRowToUserTable(user);
-            $('table > tbody > tr:last-child').click(createClickEventHandlerForUserRow(id));
+         data.forEach((item, id) => {
+            addRowToDataTable(item);
+            $('table > tbody > tr:last-child').click(createClickEventHandlerForDataRow(id, url));
          });
       }
    });
 };
 
-$(document).ready(function(){
-   updateUsersTable();
+let addCRUDFunctionality = function (formId, url) {
+   updateDataTable(url);
 
-   $('form').submit(function(event) {
+   $(formId).submit(function(event) {
       event.preventDefault();
       const form = $(this);
 
       $.ajax({
-         url: this.action,
+         url: url,
          method: "post",
          data: form.serialize(),
          success: function(data) {
             const alert = $('form + div.alert');
             alert.text(data);
-            updateUsersTable();
+            updateDataTable(url);
             alert.fadeIn(500, function(){
                setTimeout(function(){
                   alert.fadeOut();
@@ -59,4 +68,8 @@ $(document).ready(function(){
          }
       });
    });
+};
+
+$(document).ready(function(){
+   addCRUDFunctionality ('petForm', "/petApi/pet");
 });
