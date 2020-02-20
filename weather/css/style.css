@@ -1,0 +1,10 @@
+.weather-result {
+    border: 2px solid gray;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+.weather-result .name {
+    background-color: cornsilk;
+}
