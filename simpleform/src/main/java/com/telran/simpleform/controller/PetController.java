@@ -1,10 +1,10 @@
 package com.telran.simpleform.controller;
 
 import com.telran.simpleform.controller.dto.PetDto;
+import com.telran.simpleform.controller.dto.UserDto;
 import com.telran.simpleform.repository.PetRepository;
 import java.util.List;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -31,14 +31,14 @@ public class PetController {
 
 	@GetMapping("/pet")
 	public List<PetDto> getPets() {
-		log.info("get all users request received");
+		log.info("get all pets request received");
 		return petRepository.getPets();
 	}
 
 	@PostMapping("/pet")
 	public String simpleFormViaPost(PetDto petDto) {
-		log.info("User={}", petDto);
+		log.info("Pet={}", petDto);
 		petRepository.save(petDto);
-		return "User " + petDto.toString() + " created";
+		return "Pet " + petDto.toString() + " created";
 	}
 }
