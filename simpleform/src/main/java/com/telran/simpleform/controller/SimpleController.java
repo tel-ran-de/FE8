@@ -7,6 +7,12 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+/**
+ * Created for simpleform.
+ * UserDto: andron13
+ * Date: 08.02.2020
+ * Time: 10:35
+ */
 
 @RestController
 @RequestMapping("/api")
