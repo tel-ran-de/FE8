@@ -5,25 +5,88 @@
     <title>Weather</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
-    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/jquery-3.4.1.js"></script>
     <script src="js/script.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.css">
 </head>
 <body class="container">
-<form>
-    <div class="form-group">
-        <label>City</label>
-        <select class="form-control">
-            <option>Berlin</option>
-            <option>Voronezh</option>
-            <option>Amsterdam</option>
-            <option>Barcelona</option>
-            <option>London</option>
-            <option>Moscow</option>
-        </select>
+    <h1 class="display-4">Погода вашего города!</h1>
+    <form id="weather-form">
+        <div class="form-group align-items-center col-sm-4">
+            <div class="col-auto my-1">
+<!--                <label class="mr-sm-2" for="inlineFormCustomSelect">Погода вашего города!</label>-->
+                <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+                    <option selected>Выберите город:</option>
+                    <option value="1">Berlin</option>
+                    <option value="2">Voronezh</option>
+                    <option value="3">Amsterdam</option>
+                    <option value="3">Barcelona</option>
+                    <option value="3">London</option>
+                    <option value="3">Moscow</option>
+                    <option value="3">Могилёв</option>
+                </select>
+            </div>
+            <div class="col-auto my-1">
+                <div class="custom-control custom-checkbox mr-sm-2">
+                    <input type="checkbox" class="custom-control-input" id="customControlAutosizing">
+                    <label class="custom-control-label" for="customControlAutosizing">запомнить город</label>
+                </div>
+            </div>
+            <div class="col-auto my-1">
+                <button type="submit" class="btn btn-primary">показать погоду</button>
+            </div>
+        </div>
+    </form>
+
+    <div class="weather-result col-sm-4">
+        <div class="row">
+            <div class="name col-12 col-md-4">
+                City
+            </div>
+            <div class="col-12 col-md-8">
+                Berlin, DE
+            </div>
+        </div>
+        <div class="row">
+            <div class="name col-4">
+                Temperature
+            </div>
+            <div class="col-8">
+                5 &deg;C
+            </div>
+        </div>
+        <div class="row">
+            <div class="name col-4">
+                Feels like
+            </div>
+            <div class="col-8">
+                -1 &deg;C
+            </div>
+        </div>
+        <div class="row">
+            <div class="name col-4">
+                Wind
+            </div>
+            <div class="col-8">
+                25 m/sec
+            </div>
+        </div>
+        <div class="row">
+            <div class="name col-4">
+                Humidity
+            </div>
+            <div class="col-8">
+                100%
+            </div>
+        </div>
+        <div class="row">
+            <div class="name col-4">
+                Pressure
+            </div>
+            <div class="col-8">
+                1015 kPa
+            </div>
+        </div>
     </div>
-    <button type="submit" class="btn btn-info">Show weather</button>
-</form>
-<div class="weather-result col-12 col-md-6">
-</div>
 </body>
 </html>
