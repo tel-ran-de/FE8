@@ -8,3 +8,7 @@
 .weather-result .name {
     background-color: cornsilk;
 }
+
+h1 {
+    padding-bottom: 20px;
+}
