@@ -1,7 +1,13 @@
 body {
     background-color: #0069d9;
     background-image: url('../images/4292857393.jpeg');
-    background-size: 100%;
+    background-size: cover;
+}
+
+@media screen and (max-width: 576px) {
+    body {
+        background-size: contain;
+    }
 }
 
 label {
