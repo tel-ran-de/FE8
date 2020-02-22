@@ -16,6 +16,7 @@ $(document).ready(() => {
                 },
             success: (data) => {
                 console.log(data);
+                $("#city").text(data.name);
             }
         });
     })
