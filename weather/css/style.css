@@ -1,10 +1,38 @@
+body {
+    background-color: #0069d9;
+    background-image: url('../images/4292857393.jpeg');
+    background-size: 100%;
+}
+
+label {
+    margin-top: 40px;
+    font-size: 30px;
+    color: white;
+}
+option{
+    color: #002752;
+}
+.btn-info {
+    background-color: #007bff;
+}
 .weather-result {
-    border: 2px solid gray;
+    border: 2px solid #007bff;
     border-radius: 10px;
     padding: 20px;
     margin-top: 40px;
 }
-
-.weather-result .name {
-    background-color: cornsilk;
+.weather-result.name {
+    border-color: #7abaff;
+}
+div.name.col-4 {
+    color: white;
+}
+div.col-12.col-md-4 {
+    color: white;
+}
+div.col-12.col-md-8 {
+    color: white;
+}
+div.col-8 {
+    color: white;
 }
