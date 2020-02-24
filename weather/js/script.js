@@ -27,6 +27,16 @@ const WEATHER_FIELDS = [
         weatherObject: 'main.humidity'
     },
     {
+        name: 'Visibility',
+        suffix: ' m',
+        weatherObject: 'visibility'
+    },
+    {
+        name: 'Water temperature',
+        suffix: '&degC',
+        weatherObject: 'main.water_temperature'
+    },
+    {
         name: 'Pressure',
         suffix: ' kPa',
         weatherObject: 'main.pressure'
