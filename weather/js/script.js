@@ -1,5 +1,16 @@
-const API_KEY = '';
+const API_KEY = '07ddf0059c262491e6a6255260e8c44e';
 const URL = 'http://api.openweathermap.org/data/2.5/weather';
+
+const CITY_PICTURES = {
+    "Barcelona": {
+        day: "barcelona.jpg",
+        night: "night_barcelona.jpg"
+    },
+    "Voronezh": {
+        day: "voronezh.jpg",
+        night: "voronezh.jpg"
+    }
+};
 
 const WEATHER_FIELDS = [
     {
@@ -59,6 +70,12 @@ $(document).ready(() => {
                         `             </div>` +
                         `          </div>`
                 });
+
+                const cityPicture = CITY_PICTURES[data.name]
+                    ? CITY_PICTURES[data.name]
+                    : '4292857393.jpeg';
+
+                $('body').css("background-image", `url('images/${cityPicture}')`);
                 $('.weather-result').html(table);
             }
         });
