@@ -38,9 +38,6 @@ $(document).ready(() => {
         event.preventDefault();
         console.log(event);
 
-
-
-
         $.ajax({
             method: 'get',
             url: URL,
