@@ -71,8 +71,12 @@ $(document).ready(() => {
                         `          </div>`
                 });
 
-                const cityPicture = CITY_PICTURES[data.name]
-                    ? CITY_PICTURES[data.name]
+                const dayOrNight = Math.random() >= 0.5
+                    ? 'day'
+                    : 'night';
+
+                const cityPicture = CITY_PICTURES[data.name][dayOrNight]
+                    ? CITY_PICTURES[data.name][dayOrNight]
                     : '4292857393.jpeg';
 
                 $('body').css("background-image", `url('images/${cityPicture}')`);
