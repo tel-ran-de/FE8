@@ -39,6 +39,33 @@ function addCrudFunctions(formCssSelector, tableCssSelector) {
         });
     };
 
+    let addDivAlert = function() {
+        $('<div class="alert alert-info" role="alert"></div>').insertAfter(formCssSelector);
+    };
+
+    let createTable = function() {
+        let body = document.getElementsByTagName("body")[0];
+        let tbl = document.createElement('table');
+        body.appendChild(tbl);
+        let tblHead = document.createElement('thead');
+        let tblBody = document.createElement("tbody");
+        tbl.appendChild(tblHead);
+        tbl.appendChild(tblBody);
+        let headRow = document.createElement('tr');
+        tblHead.appendChild(headRow);
+
+        let labels = formCssSelector.querySelectorAll('label');
+        for (let i = 0; i < labels.length; i++) {
+            let headCell = document.createElement('th');
+            headCell.innerHTML = labels[i];
+            headRow.appendChild(headCell);
+        }
+    };
+
+    createTable();
+
+    addDivAlert();
+
     updateTable();
 
     $(formCssSelector).submit(function(event) {
