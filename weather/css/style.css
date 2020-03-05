@@ -27,7 +27,7 @@ option{
     padding: 20px;
     margin-top: 40px;
 }
-.weather-result.name {
+.weather-result .name {
     border-color: #7abaff;
 }
 div.name.col-4 {
