@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular-weather';
+
+  currentCity = 'moscow';
+
+  cityChangedEventHandler(city: string) {
+    this.currentCity = city;
+  }
 }

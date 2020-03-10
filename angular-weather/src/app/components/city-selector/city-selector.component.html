@@ -1,12 +1,7 @@
 <div class="form-group">
   <label>City</label>
-  <select class="form-control">
-    <option>Berlin</option>
-    <option>Voronezh</option>
-    <option>Amsterdam</option>
-    <option>Barcelona</option>
-    <option>London</option>
-    <option>Moscow</option>
-  </select>
+  <div>
+    <p-dropdown [options]="cities" [(ngModel)]="selectedCity"></p-dropdown>
+  </div>
 </div>
-<button type="submit" class="btn btn-info">Show weather</button>
+<button type="button" class="btn btn-info" (click)="processClickOnButton($event)" >Show weather</button>

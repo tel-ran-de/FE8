@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {WeatherService} from '../../service/weather.service';
 import {ApiResponse} from '../../model/weather';
 
@@ -43,10 +43,18 @@ export class WeatherInformerComponent implements OnInit {
 
   public weather: ApiResponse;
 
+   private _city: string;
+
+  @Input()
+  set city(value: string) {
+    this._city = value;
+    this.weather = this.weatherService.getWeather(this._city);
+  }
+
   constructor(private weatherService: WeatherService) { }
 
   ngOnInit(): void {
-    this.weather = this.weatherService.getWeather('Voronezh');
+    this.weather = this.weatherService.getWeather(this._city);
   }
 
 }
