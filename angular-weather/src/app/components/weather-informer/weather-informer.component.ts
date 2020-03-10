@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {WeatherService} from '../../service/weather.service';
+import {ApiResponse} from '../../model/weather';
 
 const WEATHER_FIELDS = [
   {
@@ -40,10 +41,12 @@ const WEATHER_FIELDS = [
 })
 export class WeatherInformerComponent implements OnInit {
 
+  public weather: ApiResponse;
+
   constructor(private weatherService: WeatherService) { }
 
   ngOnInit(): void {
-    console.log(this.weatherService.getWeather('Voronezh'));
+    this.weather = this.weatherService.getWeather('Voronezh');
   }
 
 }
