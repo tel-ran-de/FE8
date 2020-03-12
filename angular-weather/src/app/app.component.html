@@ -1,11 +1,12 @@
 <app-city-selector (cityChanged)="cityChangedEventHandler($event)"></app-city-selector>
 <app-weather-informer [city]="currentCity"></app-weather-informer>
-<router-outlet></router-outlet>
 
 <div>app-user</div>
-<app-user [user]="user"></app-user>
+<app-user [user]="user" (userChanged)="processUserChanged($event)"></app-user>
 
 <div>
   app-component
   {{ user }}
 </div>
+<router-outlet></router-outlet>
+

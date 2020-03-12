@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 
 export class User {
   firstName: string;
@@ -15,10 +15,17 @@ export class UserComponent implements OnInit {
   @Input()
   user: string;
 
+  @Output()
+  userChanged: EventEmitter<string> = new EventEmitter();
+
   constructor() { }
 
   ngOnInit(): void {
-    setTimeout(() => this.user = 'Граф Орлов', 6000);
+    setTimeout(() => {
+      this.user = 'Граф Орлов';
+      this.userChanged.emit(this.user);
+    },
+      6000);
   }
 
 }

@@ -23,4 +23,8 @@ export class AppComponent implements OnInit {
       3000
     );
   }
+
+  processUserChanged($event: string) {
+    setTimeout(() => this.user = $event, 1000);
+  }
 }
