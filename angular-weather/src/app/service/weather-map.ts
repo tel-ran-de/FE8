@@ -84,5 +84,54 @@ export const weatherMap = {
     id: 524901,
     name: 'Moscow',
     cod: 200
+  },
+  barcelona:{
+  coord: {
+  lon: 2.16,
+    lat: 41.39
+},
+  weather: [
+  {
+    id: 701,
+    main: 'Mist',
+    description: 'mist',
+    icon: '50d'
+  },
+  {
+    id: 741,
+    main: 'Fog',
+    description: 'fog',
+    icon: '50d'
   }
+],
+  base: 'stations',
+  main: {
+  temp: 19.85,
+    feels_like: 20.42,
+    temp_min: 13.89,
+    temp_max: 24.44,
+    pressure: 1018,
+    humidity: 93
+},
+  visibility: 1100,
+  wind: {
+  speed: 3.6,
+    deg: 200
+},
+  clouds: {
+  all: 90
+},
+  dt: 1584026921,
+  sys: {
+  type: 1,
+    id: 6398,
+    country: 'ES',
+    sunrise: 1583993265,
+    sunset: 1584035667
+},
+  timezone: 3600,
+  id: 3128760,
+  name: 'Barcelona',
+  cod: 200
+}
 };
