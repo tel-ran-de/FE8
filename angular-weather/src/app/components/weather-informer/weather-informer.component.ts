@@ -43,7 +43,7 @@ export class WeatherInformerComponent implements OnInit {
 
   public weather: ApiResponse;
 
-   private _city: string;
+  private _city: string;
 
   @Input()
   set city(value: string) {

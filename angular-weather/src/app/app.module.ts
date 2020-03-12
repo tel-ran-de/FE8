@@ -9,12 +9,14 @@ import { CitySelectorComponent } from './components/city-selector/city-selector.
 import { DropdownModule } from 'primeng/dropdown';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {FormsModule} from '@angular/forms';
+import { UserComponent } from './components/user/user.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     WeatherInformerComponent,
-    CitySelectorComponent
+    CitySelectorComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,
