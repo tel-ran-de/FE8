@@ -1,4 +1,5 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {SliderModule} from 'primeng/slider';
 
 @Component({
   selector: 'app-number-form',
