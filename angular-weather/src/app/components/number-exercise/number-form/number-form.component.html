@@ -1,6 +1,9 @@
 <div>
   <input type="number" [(ngModel)]="number">
   <button (click)="onPlusClick($event)"> + </button>
-  <button type="button" (click)="onNumberChanged($event)">Set number</button>
+  <button type="button" (click)="onNumberChanged()">Set number</button>
   <button (click)="onMinusClick($event)"> - </button>
+  <div>Scrolling the number</div>
+  <p-slider [(ngModel)]="number" (onChange)="onNumberChanged()" [min]="0" [max]="1000"></p-slider>
+
 </div>

@@ -13,6 +13,7 @@ import { UserComponent } from './components/user/user.component';
 import { NumberExerciseComponent } from './components/number-exercise/number-exercise.component';
 import { NumberComponent } from './components/number-exercise/number/number.component';
 import { NumberFormComponent } from './components/number-exercise/number-form/number-form.component';
+import {SliderModule} from 'primeng/slider';
 
 @NgModule({
   declarations: [
@@ -22,14 +23,15 @@ import { NumberFormComponent } from './components/number-exercise/number-form/nu
     UserComponent,
     NumberExerciseComponent,
     NumberComponent,
-    NumberFormComponent
+    NumberFormComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     DropdownModule,
     BrowserAnimationsModule,
-    FormsModule
+    FormsModule,
+    SliderModule
   ],
   providers: [],
   bootstrap: [AppComponent]
