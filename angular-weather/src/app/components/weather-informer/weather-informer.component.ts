@@ -48,13 +48,16 @@ export class WeatherInformerComponent implements OnInit {
   @Input()
   set city(value: string) {
     this._city = value;
-    this.weather = this.weatherService.getWeather(this._city);
+    /*this.weather = this.weatherService.getWeather(this._city);*/
   }
 
   constructor(private weatherService: WeatherService) { }
 
   ngOnInit(): void {
-    this.weather = this.weatherService.getWeather(this._city);
+    this.weatherService.getWeather(this._city).subscribe(
+      apiResponse => this.weather = apiResponse,
+      error => console.log(error)
+    );
   }
 
 }

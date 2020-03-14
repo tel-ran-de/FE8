@@ -13,6 +13,7 @@ import { UserComponent } from './components/user/user.component';
 import { NumberExerciseComponent } from './components/number-exercise/number-exercise.component';
 import { NumberComponent } from './components/number-exercise/number/number.component';
 import { NumberFormComponent } from './components/number-exercise/number-form/number-form.component';
+import {HttpClient, HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { NumberFormComponent } from './components/number-exercise/number-form/nu
     AppRoutingModule,
     DropdownModule,
     BrowserAnimationsModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
