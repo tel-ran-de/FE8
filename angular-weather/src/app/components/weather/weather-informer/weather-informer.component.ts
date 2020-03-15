@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {WeatherService} from '../../service/weather.service';
-import {ApiResponse} from '../../model/weather';
+import {WeatherService} from '../../../service/weather.service';
+import {ApiResponse} from '../../../model/weather';
 
 const WEATHER_FIELDS = [
   {
@@ -48,12 +48,15 @@ export class WeatherInformerComponent implements OnInit {
   @Input()
   set city(value: string) {
     this._city = value;
-    /*this.weather = this.weatherService.getWeather(this._city);*/
+    this.updateWeather();
   }
 
   constructor(private weatherService: WeatherService) { }
 
   ngOnInit(): void {
+  }
+
+  updateWeather() {
     this.weatherService.getWeather(this._city).subscribe(
       apiResponse => this.weather = apiResponse,
       error => console.log(error)

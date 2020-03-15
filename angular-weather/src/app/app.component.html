@@ -1,12 +1,14 @@
-<app-city-selector (cityChanged)="cityChangedEventHandler($event)"></app-city-selector>
-<app-weather-informer [city]="currentCity"></app-weather-informer>
+<ul style="margin-bottom: 15px">
+  <li class="col-12">
+    <a href="weather">Weather informer</a>
+  </li>
+  <li class="col-12">
+    <a href="weather-async">Weather informer - with async pipe</a>
+  </li>
+  <li class="col-12">
+    <a href="number-exercise">Number exercise</a>
+  </li>
+</ul>
+
 <router-outlet></router-outlet>
-
-<!--<div>app-user</div>
-<app-user [user]="user" (userChanged)="processUserChanged($event)"></app-user>
-
-<div>
-  app-component
-  {{ user }}
-</div>-->
 
