@@ -1,0 +1,15 @@
+<form [formGroup]="requestDataForm">
+  <div class="form-group">
+    <label>City</label>
+    <input class="form-control" type="text" formControlName="city">
+  </div>
+  <div class="form-group">
+    <label>Metric system</label>
+    <div>
+      <p-dropdown [options]="metricSystems" formControlName="metricSystem" ></p-dropdown>
+    </div>
+  </div>
+</form>
+{{ requestDataForm.value | json }}
+
+<app-weather-informer-dummy [weather]=""></app-weather-informer-dummy>
