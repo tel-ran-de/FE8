@@ -1,6 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl, FormGroup} from '@angular/forms';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {SelectItem} from 'primeng/api';
+import {WeatherService} from '../../service/weather.service';
+import {Observable} from 'rxjs';
+import {ApiResponse} from '../../model/weather';
+
+export class DataRequest {
+  city: string;
+  metricSystem: string;
+}
 
 @Component({
   selector: 'app-weather-any-city',
@@ -11,13 +19,15 @@ export class WeatherAnyCityComponent implements OnInit {
 
   metricSystems: SelectItem[];
 
+  weather$: Observable<ApiResponse>;
+
   requestDataForm = new FormGroup({
-      city: new FormControl(''),
-      metricSystem: new FormControl('')
+      city: new FormControl('Moscow'),
+      metricSystem: new FormControl('metric')
     }
   );
 
-  constructor() { }
+  constructor(private weatherService: WeatherService) { }
 
   ngOnInit(): void {
     this.metricSystems = [
@@ -30,6 +40,12 @@ export class WeatherAnyCityComponent implements OnInit {
         value: 'imperial'
       }
     ];
+    this.requestDataForm.get('city').setValidators(Validators.required);
   }
 
+  handleFormSubmit() {
+    if (this.requestDataForm.valid) {
+      this.weather$ = this.weatherService.getWeatherExtended(this.requestDataForm.value);
+    }
+  }
 }
