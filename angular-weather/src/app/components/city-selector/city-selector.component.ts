@@ -26,6 +26,18 @@ export class CitySelectorComponent implements OnInit {
       {
         label: 'Voronezh',
         value: 'voronezh'
+      },
+      {
+        label: 'Berlin',
+        value: 'berlin'
+      },
+      {
+        label: 'Amsterdam',
+        value: 'amsterdam'
+      },
+      {
+        label: 'Barcelona',
+        value: 'barcelona'
       }
     ];
   }
