@@ -41,7 +41,19 @@ const WEATHER_FIELDS = [
         name: 'Pressure',
         suffix: ' kPa',
         weatherObject: 'main.pressure'
+    },
+
+    {
+        name: "Visibility",
+        suffix: 'm',
+        weatherObject:'visibility'
+    },
+
+    {
+        name: "Weather conditions",
+        weatherObject:'weather[0].main'
     }
+
 ];
 
 $(document).ready(() => {
